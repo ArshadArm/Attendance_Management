@@ -1,0 +1,85 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ------------------ Global Root ------------------ */
+:root {
+  --font-sans: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  --line-height: 1.5;
+  --color-light-bg: #f8fafc; /* Tailwind slate-50 */
+  --color-dark-text: #1e293b; /* Tailwind slate-900 */
+}
+
+/* ------------------ Body ------------------ */
+body {
+  @apply m-0 min-w-[320px] min-h-screen bg-slate-50 text-slate-900 font-sans;
+  line-height: var(--line-height);
+}
+
+/* ------------------ Links ------------------ */
+a {
+  @apply font-medium text-blue-500 transition-colors duration-200;
+  text-decoration: none;
+}
+a:hover {
+  @apply text-blue-600;
+}
+
+/* ------------------ Buttons ------------------ */
+button {
+  @apply rounded-md font-medium cursor-pointer transition duration-200;
+}
+button:hover {
+  @apply opacity-95;
+}
+
+/* ------------------ Headings ------------------ */
+h1, h2, h3 {
+  @apply font-semibold leading-tight;
+}
+
+/* ------------------ Logo Animations ------------------ */
+.logo {
+  @apply h-24 p-6 transition-all duration-300;
+  will-change: filter;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+@keyframes logo-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+/* ------------------ Card Component ------------------ */
+.card {
+  @apply bg-white p-6 rounded-xl shadow-lg transition hover:shadow-2xl;
+}
+
+/* ------------------ Read-the-docs / Small Text ------------------ */
+.read-the-docs {
+  @apply text-gray-500 text-sm;
+}
+
+/* ------------------ Utilities ------------------ */
+.max-width-container {
+  @apply max-w-6xl mx-auto px-6;
+}
+
+.flex-center {
+  @apply flex justify-center items-center;
+}
+
+.hover-fade {
+  @apply transition duration-300 hover:opacity-90;
+}
